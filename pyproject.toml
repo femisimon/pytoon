@@ -11,13 +11,13 @@ requires-python = ">=3.8"
 Homepage = "https://github.com/femisimon/toonit"
 
 [project.scripts]
-pytoon = "pytoon.cli:main"
+toonit = "toonit.cli:main"
 
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [tool.pytest.ini_options]
-pythonpath = ["pytoon"]
+pythonpath = ["toonit"]
 testpaths = ["tests"]
 addopts = "-ra"

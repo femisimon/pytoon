@@ -1,11 +1,11 @@
-# pytoon/core/scanner.py
+# toonit/core/scanner.py
 from __future__ import annotations
 
 from typing import List
 
-from pytoon.core.types import Token
-from pytoon.utils.string_utils import find_closing_quote
-from pytoon.utils.constants import (
+from toonit.core.types import Token
+from toonit.utils.string_utils import find_closing_quote
+from toonit.utils.constants import (
     SPACE,
     NEWLINE,
     TAB,

@@ -1,5 +1,5 @@
 # tests/test_round_trip.py
-import pytoon
+import toonit
 
 
 def test_round_trip_consistency():
@@ -9,9 +9,9 @@ def test_round_trip_consistency():
         "flag": False,
     }
 
-    encoded = pytoon.encode(data)
-    decoded = pytoon.decode(encoded)
-    reencoded = pytoon.encode(decoded)
+    encoded = toonit.encode(data)
+    decoded = toonit.decode(encoded)
+    reencoded = toonit.encode(decoded)
 
     # The decoded structure should equal original
     assert decoded == data

@@ -1,6 +1,6 @@
-# PyTOON
+# toonit
 
-PyTOON is a compact, human-friendly serializer for **TOON – Token-Oriented Object Notation**.  
+toonit is a compact, human-friendly serializer for **TOON – Token-Oriented Object Notation**.  
 It includes a Python scanner, parser, encoder, decoder, and CLI so you can round-trip Python
 structures through the TOON format.
 
@@ -8,7 +8,7 @@ structures through the TOON format.
 - Fast encode/decode with perfect round-tripping
 - Top-level key folding (`a.b: 1` style) with automatic unfolding on decode
 - Columnar encoding for lists of dictionaries
-- Friendly CLI: `pytoon encode`, `pytoon decode`
+- Friendly CLI: `toonit encode`, `toonit decode`
 
 ---
 
@@ -17,7 +17,7 @@ structures through the TOON format.
 Published package:
 
 ```bash
-pip install pytoon
+pip install toonit
 ```
 
 Editable install for development:
@@ -39,23 +39,23 @@ TOON targets structured data where JSON becomes verbose. Compared to JSON it is:
 Encode Python → TOON:
 
 ```python
-import pytoon
+import toonit
 
-s = pytoon.encode({"a": 1, "b": 2})
+s = toonit.encode({"a": 1, "b": 2})
 print(s)
 ```
 
 Decode TOON → Python:
 
 ```python
-data = pytoon.decode(s)
+data = toonit.decode(s)
 ```
 
 Round-trip guarantee:
 
 ```python
 original = {"info": {"name": "Femi", "city": "Lagos"}}
-assert pytoon.decode(pytoon.encode(original)) == original
+assert toonit.decode(toonit.encode(original)) == original
 ```
 
 ## Folding Rules
@@ -63,7 +63,7 @@ assert pytoon.decode(pytoon.encode(original)) == original
 Nested dictionaries are folded into dotted keys during encoding:
 
 ```python
-pytoon.encode({"a": {"b": 1, "c": 2}})
+toonit.encode({"a": {"b": 1, "c": 2}})
 ```
 
 produces TOON like:
@@ -86,7 +86,7 @@ rows = [
     {"x": 3, "y": 30},
 ]
 
-encoded = pytoon.encode(rows)
+encoded = toonit.encode(rows)
 ```
 
 which yields TOON similar to:
@@ -99,15 +99,15 @@ y: [10, 20, 30]
 Decoding brings the rows back intact:
 
 ```python
-assert pytoon.decode(pytoon.encode(rows)) == rows
+assert toonit.decode(toonit.encode(rows)) == rows
 ```
 
 ## CLI
 
 ```
-pytoon encode input.json > out.toon
-pytoon decode out.toon
-echo '{"a": 1, "b": 2}' | pytoon encode
+toonit encode input.json > out.toon
+toonit decode out.toon
+echo '{"a": 1, "b": 2}' | toonit encode
 ```
 
 ## Tests
@@ -121,7 +121,7 @@ The suite covers parsing, scanning, folding, columnar transforms, error cases, a
 ## Project Layout
 
 ```
-pytoon/
+toonit/
   core/       # scanner, parser, AST, writer
   encoding/   # folding + columnar transforms
   decoding/   # normalization + validation

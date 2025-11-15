@@ -1,7 +1,7 @@
-# pytoon/decoding/validation.py
+# toonit/decoding/validation.py
 from __future__ import annotations
 
-from pytoon.core.types import (
+from toonit.core.types import (
     Node,
     LiteralNode,
     ListNode,

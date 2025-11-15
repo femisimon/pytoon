@@ -1,12 +1,12 @@
-# pytoon/decoding/decoder.py
+# toonit/decoding/decoder.py
 from __future__ import annotations
 
 from typing import Any
 
-from pytoon.core.scanner import Scanner
-from pytoon.core.parser import Parser
-from pytoon.decoding.normalize import normalize_node
-from pytoon.decoding.validation import validate_root_node
+from toonit.core.scanner import Scanner
+from toonit.core.parser import Parser
+from toonit.decoding.normalize import normalize_node
+from toonit.decoding.validation import validate_root_node
 
 
 def decode(text: str) -> Any:

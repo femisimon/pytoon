@@ -1,6 +1,6 @@
 # tests/test_folding.py
-import pytoon
-from pytoon.encoding.folding import fold_object
+import toonit
+from toonit.encoding.folding import fold_object
 
 
 def test_folding_simple():
@@ -12,5 +12,5 @@ def test_folding_simple():
 
 def test_folding_through_encode_decode():
     data = {"a": {"b": 1, "c": 2}}
-    out = pytoon.decode(pytoon.encode(data))
+    out = toonit.decode(toonit.encode(data))
     assert out == data

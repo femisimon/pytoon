@@ -1,11 +1,11 @@
-# pytoon/encoding/encoder.py
+# toonit/encoding/encoder.py
 from __future__ import annotations
 
 from typing import Any, Dict, List
 
-from pytoon.core.writer import Writer
-from pytoon.encoding.folding import fold_object
-from pytoon.encoding.expand import expand_columns
+from toonit.core.writer import Writer
+from toonit.encoding.folding import fold_object
+from toonit.encoding.expand import expand_columns
 
 
 def encode(data: Any, *, indent: int = 2, delimiter: str = ",") -> str:

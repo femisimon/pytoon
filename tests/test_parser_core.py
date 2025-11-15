@@ -1,6 +1,6 @@
 # tests/test_parser_core.py
-from pytoon.core.scanner import Scanner
-from pytoon.core.parser import Parser
+from toonit.core.scanner import Scanner
+from toonit.core.parser import Parser
 
 
 def test_parse_basic_object():

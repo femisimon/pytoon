@@ -1,4 +1,4 @@
-# pytoon/utils/constants.py
+# toonit/utils/constants.py
 from __future__ import annotations
 
 from typing import Literal, Mapping

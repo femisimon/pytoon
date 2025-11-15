@@ -1,6 +1,6 @@
 # tests/conftest.py
 import pytest
-import pytoon
+import toonit
 
 
 @pytest.fixture

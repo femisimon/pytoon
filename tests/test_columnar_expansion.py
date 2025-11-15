@@ -1,5 +1,5 @@
 # tests/test_columnar_expansion.py
-import pytoon
+import toonit
 
 
 def test_columnar_list_of_dicts():
@@ -8,7 +8,7 @@ def test_columnar_list_of_dicts():
         {"a": 3, "b": 4},
     ]
 
-    encoded = pytoon.encode(rows)
-    decoded = pytoon.decode(encoded)
+    encoded = toonit.encode(rows)
+    decoded = toonit.decode(encoded)
 
     assert decoded == rows

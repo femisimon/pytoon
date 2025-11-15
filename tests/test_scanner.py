@@ -1,4 +1,4 @@
-from pytoon.parser.scanner import Scanner
+from toonit.parser.scanner import Scanner
 
 def test_scanner_init():
     s = Scanner("hello")

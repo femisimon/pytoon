@@ -1,14 +1,14 @@
-# pytoon/decoding/normalize.py
+# toonit/decoding/normalize.py
 from __future__ import annotations
 from typing import Any, Dict, List
 
-from pytoon.core.types import (
+from toonit.core.types import (
     LiteralNode,
     ListNode,
     ObjectNode,
     Node
 )
-from pytoon.encoding.folding import unfold_object
+from toonit.encoding.folding import unfold_object
 
 
 # ----------------------------------------------------------

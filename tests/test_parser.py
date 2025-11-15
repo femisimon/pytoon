@@ -1,4 +1,4 @@
-from pytoon.parser.parser import Parser
+from toonit.parser.parser import Parser
 
 def test_parser_minimal():
     p = Parser("hello")

@@ -1,18 +1,18 @@
-# pytoon/core/primitives.py
+# toonit/core/primitives.py
 from __future__ import annotations
 
 from typing import Any
 
-from pytoon.utils.literal_utils import (
+from toonit.utils.literal_utils import (
     is_boolean_or_null_literal,
     is_numeric_literal
 )
-from pytoon.utils.constants import (
+from toonit.utils.constants import (
     TRUE_LITERAL,
     FALSE_LITERAL,
     NULL_LITERAL
 )
-from pytoon.utils.string_utils import unescape_string
+from toonit.utils.string_utils import unescape_string
 
 
 def decode_literal(token: str) -> Any:
@@ -37,7 +37,7 @@ def decode_literal(token: str) -> Any:
     return token
 
 
-# pytoon/core/primitives.py
+# toonit/core/primitives.py
 
 def is_primitive(value) -> bool:
     return isinstance(value, (str, int, float, bool)) or value is None

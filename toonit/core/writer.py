@@ -1,14 +1,14 @@
-# pytoon/core/writer.py
+# toonit/core/writer.py
 from __future__ import annotations
 
 from typing import Any, Dict, List
 
-from pytoon.core.primitives import is_primitive  # we’ll add this below
-from pytoon.utils.constants import (
+from toonit.core.primitives import is_primitive  # we’ll add this below
+from toonit.utils.constants import (
     DEFAULT_DELIMITER,
     SPACE,
 )
-from pytoon.utils.string_utils import escape_string
+from toonit.utils.string_utils import escape_string
 
 
 class Writer:

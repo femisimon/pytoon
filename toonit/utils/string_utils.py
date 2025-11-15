@@ -1,4 +1,4 @@
-# pytoon/utils/string_utils.py
+# toonit/utils/string_utils.py
 from __future__ import annotations
 
 from typing import Optional

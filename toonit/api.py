@@ -1,4 +1,4 @@
-# pytoon/api.py
+# toonit/api.py
 
 """
 Public API for PyToon.

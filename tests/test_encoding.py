@@ -1,4 +1,4 @@
-from pytoon.encoding.encoder import encode
+from toonit.encoding.encoder import encode
 
 def test_encode_basic():
     result = encode("hello")

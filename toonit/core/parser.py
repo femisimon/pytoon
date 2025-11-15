@@ -1,17 +1,17 @@
-# pytoon/core/parser.py
+# toonit/core/parser.py
 from __future__ import annotations
 
 from typing import List, Optional
 
-from pytoon.core.types import (
+from toonit.core.types import (
     Token,
     Node,
     LiteralNode,
     ObjectNode,
     ListNode
 )
-from pytoon.core.primitives import decode_literal
-from pytoon.core.scanner import Scanner
+from toonit.core.primitives import decode_literal
+from toonit.core.scanner import Scanner
 
 class ParseError(Exception):
     pass

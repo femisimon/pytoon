@@ -1,4 +1,4 @@
-# pytoon/utils/literal_utils.py
+# toonit/utils/literal_utils.py
 from __future__ import annotations
 
 from .constants import TRUE_LITERAL, FALSE_LITERAL, NULL_LITERAL
