@@ -1,0 +1,23 @@
+[project]
+name = "pytoon"
+version = "0.1.0"
+description = "Python implementation of the TOON (Token-Oriented Object Notation) format"
+authors = [{name="Femi Alashi"}]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/femisimon/pytoon"
+
+[project.scripts]
+pytoon = "pytoon.cli:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = ["pytoon"]
+testpaths = ["tests"]
+addopts = "-ra"

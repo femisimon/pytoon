@@ -1,0 +1,147 @@
+# PyTOON
+
+PyTOON is a compact, human-friendly serializer for **TOON – Token-Oriented Object Notation**.  
+It includes a Python scanner, parser, encoder, decoder, and CLI so you can round-trip Python
+structures through the TOON format.
+
+## Features
+- Fast encode/decode with perfect round-tripping
+- Top-level key folding (`a.b: 1` style) with automatic unfolding on decode
+- Columnar encoding for lists of dictionaries
+- Friendly CLI: `pytoon encode`, `pytoon decode`
+
+---
+
+## Installation
+
+Published package:
+
+```bash
+pip install pytoon
+```
+
+Editable install for development:
+
+```bash
+pip install -e .
+```
+
+## Why TOON?
+
+TOON targets structured data where JSON becomes verbose. Compared to JSON it is:
+
+- Smaller for nested or repetitive payloads (often 40–70% savings)
+- Friendly for analytics because columnar expansion is built in
+- Easier to read and edit thanks to lightweight syntax
+
+## Basic Usage
+
+Encode Python → TOON:
+
+```python
+import pytoon
+
+s = pytoon.encode({"a": 1, "b": 2})
+print(s)
+```
+
+Decode TOON → Python:
+
+```python
+data = pytoon.decode(s)
+```
+
+Round-trip guarantee:
+
+```python
+original = {"info": {"name": "Femi", "city": "Lagos"}}
+assert pytoon.decode(pytoon.encode(original)) == original
+```
+
+## Folding Rules
+
+Nested dictionaries are folded into dotted keys during encoding:
+
+```python
+pytoon.encode({"a": {"b": 1, "c": 2}})
+```
+
+produces TOON like:
+
+```
+a.b: 1,
+a.c: 2
+```
+
+During decoding those dotted keys are unfolded back to their original hierarchy.
+
+## Columnar Encoding
+
+Lists of dictionaries are encoded column-by-column automatically:
+
+```python
+rows = [
+    {"x": 1, "y": 10},
+    {"x": 2, "y": 20},
+    {"x": 3, "y": 30},
+]
+
+encoded = pytoon.encode(rows)
+```
+
+which yields TOON similar to:
+
+```
+x: [1, 2, 3],
+y: [10, 20, 30]
+```
+
+Decoding brings the rows back intact:
+
+```python
+assert pytoon.decode(pytoon.encode(rows)) == rows
+```
+
+## CLI
+
+```
+pytoon encode input.json > out.toon
+pytoon decode out.toon
+echo '{"a": 1, "b": 2}' | pytoon encode
+```
+
+## Tests
+
+```
+pytest
+```
+
+The suite covers parsing, scanning, folding, columnar transforms, error cases, and round-trip behavior.
+
+## Project Layout
+
+```
+pytoon/
+  core/       # scanner, parser, AST, writer
+  encoding/   # folding + columnar transforms
+  decoding/   # normalization + validation
+  cli.py      # command-line entry points
+  api.py      # public encode/decode API
+```
+
+## Example TOON
+
+```
+a.b: 1,
+list: [1, 2, 3],
+info.name: "Femi",
+info.city: "Lagos"
+```
+
+## License
+
+MIT License. See `LICENSE` for details.
+
+## Contributing
+
+Issues and pull requests are welcome! Feel free to start a discussion if you have ideas for the TOON format or the Python implementation.

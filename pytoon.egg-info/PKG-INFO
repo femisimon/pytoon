@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: pytoon
+Version: 0.1.0
+Summary: Python implementation of the TOON (Token-Oriented Object Notation) format
+Author: Femi Alashi
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/femisimon/pytoon
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# PyTOON
+
+PyTOON is the Python implementation of **TOON** — Token-Oriented Object Notation.
+
+### Features
+- 40–70% more compact than JSON in many cases
+- Human-friendly, columnar-friendly encoding
+- Fast Python decoder / encoder
+- CLI tool: `pytoon encode`, `pytoon decode`
+
+### Usage
+
+```python
+import pytoon
+
+s = pytoon.encode({"a": 1, "b": 2})
+data = pytoon.decode(s)
