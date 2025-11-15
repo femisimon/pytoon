@@ -1,11 +1,9 @@
 # toonit
 [![CI](https://github.com/femisimon/toonit/actions/workflows/ci.yml/badge.svg)](https://github.com/femisimon/toonit/actions/workflows/ci.yml)
 [![PyPI Version](https://img.shields.io/pypi/v/toonit)](https://pypi.org/project/toonit/)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/toonit)](https://pypi.org/project/toonit/)
-[![Python Versions](https://img.shields.io/pypi/pyversions/toonit)](https://pypi.org/project/toonit/)
 [![License](https://img.shields.io/github/license/femisimon/toonit)](LICENSE)
 
-[→ Visit the project on GitHub](https://github.com/femisimon/toonit)
+[→ Visit the project on GitHub](https://github.com/femisimon/toonit) • [Available on PyPI](https://pypi.org/project/toonit/)
 
 toonit is a developer-friendly serializer for **TOON – Token-Oriented Object Notation**.  
 It ships a Python scanner, parser, encoder, decoder, and CLI so you can round-trip Python
